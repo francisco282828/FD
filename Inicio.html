@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franhanna Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            height:100vh;
+            position:relative;
+            background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)),
+            url(Imagenes/48.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            height: 100px;
+        }
+
+        .logo {
+            height: 110px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item {
+            margin: 0 90px;
+            font-size: 18px;
+            font-weight: 600px;
+            cursor: pointer;
+            color: #f2f2f2;
+        }
+
+        .item:hover {
+            color: aqua;
+        }
+
+        #menu {
+            display: none;
+        }
+
+        .menu-icono {
+            width: 25px;
+        }
+
+        label {
+            cursor: pointer;
+            display: none;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 30px;
+            background-color: #57c9ae;
+            color: #f2f2f2;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none; /* Agregamos esta línea */
+        }
+
+        .btn:hover {
+            background-color: rgb(52, 143, 146);
+        }
+
+        @media (max-width: 991px) {
+            .menu {
+                padding: 30px;
+                margin: 0;
+            }
+
+            label {
+                display: initial;
+            }
+
+            .menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #323337;
+                display: none;
+            }
+
+            .item {
+                margin: 0 0 20px 0;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100px;
+            }
+
+            #menu:checked~.menu {
+                display: initial;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+
+        <img src="Imagenes/logo 111.png" class="logo" alt="">
+
+        <input type="checkbox" id="menu" />
+
+        <label for="menu">
+            <img src="Imagenes/menu.png" class="menu-icono" alt="">
+        </label>
+
+        <ul class="menu">
+            <li class="item">Inicio</li>
+            <li class="item">Conoceme</li>
+            <li class="item">Cursos</li>
+            <li class="item">Contactame</li>
+            <a href="login.html" class="btn">Login</a> <!-- Modificamos esta línea -->
+        </ul>
+
+    </header>
+
+    <script>
+        var header = document.getElementById('header');
+      
+        window.addEventListener('scroll', () => {
+          var scroll = window.scrollY;
+      
+          if (scroll > 10) {
+            header.style.backdropFilter = 'blur(9000px)';
+          } else {
+            header.style.backgroundColor = 'transparent';
+            header.style.backdropFilter = 'none';
+          }
+        });
+      </script>
+      
+</body>
+
+</html>
